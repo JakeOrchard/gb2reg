@@ -1,0 +1,21 @@
+v 1.0
+d gb2reg Regression with the GB2 error distribution Package
+d Jacob Orchard, Brigham Young University Department of Economics
+d The standard linear regression model typically assumes that the 
+d errors are independently and identically distributed. The 
+d corresponding ordinary least squares (OLS) estimator will yield 
+d the best linear approximation of the conditional mean. This 
+d regression method, which uses the Generalized Beta of the Second
+d kind (GB2) 
+d distribution, can accommodate situations in which the conditional 
+d mean, variance and skewness of a variable of interest may vary as 
+d a function of independent variables. 
+d 
+d Support: orchard.jake@gmail.com
+d 
+p gb2reg Regression with the GB2 error distribution 
+f gb2reg.ado
+f gb2reg.sthlp
+f llf_gb2.ado
+f llf_gg.ado
+f llf_ln.ado
