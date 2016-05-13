@@ -8,4 +8,4 @@ Installation
 
 The development version from github:
 
-net install sgtreg, from(https://raw.githubusercontent.com/carterkd/sgtreg/master/) force
+net install sgtreg, from(https://github.com/jakesurf/gb2reg/tree/master) force
