@@ -71,7 +71,14 @@ maximization process{p_end}
 {opt initial} list of numbers that specifies the initial values of the coefficients. This is optional, the program will attempt to search for the best initial values if no initial values are provided.
 
 {phang}
-{cmd:constraints(}{it:{help numlist}}}
+{opt vce(vcetype)} specifies the type of standard error reported, which includes
+        types that are robust to some kinds of misspecification (robust), that
+        allow for intragroup correlation (cluster clustvar), and that are
+        derived from asymptotic theory (oim, opg); see {manhelp vce_option R}.
+
+
+{phang}
+{cmd:constraints(}{it:{help numlist)}}
 specifies the linear constraints to be
 applied during estimation.  {opt constraints(numlist)} specifies the
 constraints by number. Constraints are defined using the {cmd:constraint}
@@ -111,6 +118,7 @@ In cases where the convergence is difficult, try to use the option {cmd: techniq
 {phang}{cmd:. gen y = 1 + 2*x1 + 3*x2 + rnormal(0,1)}{p_end}
 
 {phang}{cmd:. gb2reg y x1 x2}{p_end}
+{phang}{cmd:. gb2reg y x1 x2, vce(robust)}{p_end}
 {phang}{cmd:. gb2reg y x1 x2, technique(bfgs)}{p_end}
 {phang}{cmd:. gb2reg y x1 x2, qinf}{p_end}
 {phang}{cmd:. gb2reg y x1 x2, sigma(x2) p(x2) qinf }{p_end}
