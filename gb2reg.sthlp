@@ -44,7 +44,8 @@ maximization process{p_end}
 {title:Description}
 
 {pstd}
-{cmd:gb2reg} fits a model of {depvar} on {indepvars} using maximum likelihood with an error term distributed as a gb2. The parameter delta varies with the independent variables. The other parameters can also vary with independent variables if the sigma(), p(), and q() options are used.
+{cmd:gb2reg} fits a model of the log of {depvar} on {indepvars} using maximum likelihood with an error term distributed as a gb2. The parameter delta varies with the independent variables. 
+The other parameters can also vary with the independent variables if the sigma(), p(), and q() options are used.
 
 
 {marker options}{...}
