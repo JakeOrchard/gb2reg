@@ -2,8 +2,8 @@
 distributed in the GB2 family tree
 
 Author--Jacob Orchard
-v 1.1
-Update--5/16/2016*/
+v 1.2
+Update--6/1/2016*/
 
 
 
@@ -33,7 +33,7 @@ version 13.0
 		local nq: word count `qvars'
 		
 		marksample touse 
-		*Defines titles used when runngin the program
+		*Defines titles used when running the program
 	    local gb2title "ML fit of GB2 distribution"
 		local ggtitle "ML fit of Generalized Gamma distribution"
 	    local lntitle "ML fit of Log-Normal distribution"
@@ -81,16 +81,16 @@ version 13.0
 		
 			 if "`qinfinite'" == "" {
 				local evaluator llf_gb2
-				ml model lf `evaluator' (delta: `depvar' = `regs')  (sigma: `sigmavars')  (p: `pvars') (q: `qvars') if `touse', search(on) maximize initial(`initial') `constraints' `technique'  `difficult' `iterate' `log' `trace' `gradient' `showstep' `hessian' `showtolerance' `tolerance' `ltolerance' `nrtolerance' title(`gb2title')
+				ml model lf `evaluator' (delta: `depvar' = `regs')  (sigma: `sigmavars')  (p: `pvars') (q: `qvars') if `touse',  search(on) maximize initial(`initial') `vce' `constraints' `technique'  `difficult' `iterate' `log' `trace' `gradient' `showstep' `hessian' `showtolerance' `tolerance' `ltolerance' `nrtolerance' title(`gb2title')
 			}
 			else {
 				local evaluator llf_gg
-				ml model lf `evaluator' (delta: `depvar' = `regs')  (sigma: `sigmavars')  (p: `pvars') if `touse', search(on) maximize initial(`initial') `constraints' `technique'  `difficult' `iterate' `log' `trace' `gradient' `showstep' `hessian' `showtolerance' `tolerance' `ltolerance' `nrtolerance'	title(`ggtitle')		
+				ml model lf `evaluator' (delta: `depvar' = `regs')  (sigma: `sigmavars')  (p: `pvars') if `touse', search(on) maximize initial(`initial')  `vce' `constraints' `technique'  `difficult' `iterate' `log' `trace' `gradient' `showstep' `hessian' `showtolerance' `tolerance' `ltolerance' `nrtolerance'	title(`ggtitle')		
 			}
 		}
 		else {
 			local evaluator llf_ln
-			ml model lf `evaluator' (delta: `depvar' = `regs') (sigma: `sigmavars')  if `touse', search(on) maximize initial(`initial') `constraints' `technique' `difficult' `iterate' `log'  `trace' `gradient' `showstep' `hessian' `showtolerance' `tolerance' `ltolerance' `nrtolerance'			title(`lntitle')
+			ml model lf `evaluator' (delta: `depvar' = `regs') (sigma: `sigmavars')  if `touse', search(on) maximize initial(`initial') `vce' `constraints' `technique' `difficult' `iterate' `log'  `trace' `gradient' `showstep' `hessian' `showtolerance' `tolerance' `ltolerance' `nrtolerance'			title(`lntitle')
 
 		}
 		
