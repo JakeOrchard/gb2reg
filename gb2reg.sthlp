@@ -45,7 +45,9 @@ maximization process{p_end}
 
 {pstd}
 {cmd:gb2reg} fits a model of the log of {depvar} on {indepvars} using maximum likelihood with an error term distributed as a gb2. The parameter delta varies with the independent variables. 
-The other parameters can also vary with the independent variables if the sigma(), p(), and q() options are used.
+The other parameters can also vary with the independent variables 
+if the sigma(), p(), and q() options are used. All values of the dependent 
+variable must be positive.
 
 
 {marker options}{...}
@@ -98,7 +100,9 @@ command; see {manhelp constraint R}.
 {opt showtol:erance},
 {opt tol:erance(#)},
 {opt ltol:erance(#)},
-{opt nrtol:erance(#)}; see {manhelp maximize R}.
+{opt nrtol:erance(#)}; see {manhelp maximize R}. Allowed techniques include Newton-Raphson (nr), Berndt-Hall-Hausman (bhhh), Davidon
+-Fletcher-Powell (dfp), and Broyden-Fletcher-Goldfarb-Shanno (bfgs). The default
+ algorithm is Newton-Raphson.
 
 
 {marker remarks}{...}
