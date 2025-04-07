@@ -1,3 +1,5 @@
+This project is no longer maintained. 
+
 # gb2reg
 
 GB2 Regression Stata Package
